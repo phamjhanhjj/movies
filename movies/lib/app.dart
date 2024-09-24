@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies/home_page.dart';
 import 'auth_gate.dart';
 
 class MyApp extends StatelessWidget {
