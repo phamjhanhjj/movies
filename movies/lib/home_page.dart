@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movies/home.dart';
+import 'package:movies/user.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
