@@ -5,6 +5,7 @@ class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _MyHomePageState createState() => _MyHomePageState();
 }
 
@@ -28,9 +29,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Bottom Tab Bar'),
-      ),
+      // appBar: AppBar(
+      //   title: const Text('Bottom Tab Bar'),
+      // ),
       body: _children[_currentIndex], // Hiển thị màn hình theo chỉ mục
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped, // Sự kiện khi tab được chọn

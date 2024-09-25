@@ -2,58 +2,37 @@ import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
 
 class UserScreen extends StatelessWidget {
-  const UserScreen({super.key});
+    const UserScreen({super.key});
 
-  @override
+    @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.person),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute<ProfileScreen>(
-                  builder: (context) => ProfileScreen(
-                    appBar: AppBar(
-                      title: const Text('User Profile'),
-                    ),
-                    actions: [
-                      SignedOutAction((context) {
-                        Navigator.of(context).pop();
-                      })
-                    ],
-                    children: [
-                      const Divider(),
-                      Padding(
-                        padding: const EdgeInsets.all(2),
-                        child: AspectRatio(
-                          aspectRatio: 1,
-                          child: Image.asset('flutterfire_300x.png'),
-                        ),
-                      ),
-                    ],
-                  ),
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ProfileScreen(
+            // appBar: AppBar(
+            //   title: const Text('Profile'),
+            // ),
+            // actions: [
+            //   SignedOutAction((context) {
+            //     Navigator.of(context).pop();
+            //   })
+            // ],
+            children: [
+              const Divider(),
+              Padding(
+                padding: const EdgeInsets.all(2),
+                child: AspectRatio(
+                  aspectRatio: 1,
+                  child: Image.asset('flutterfire_300x.png'),
                 ),
-              );
-            },
-          )
-        ],
-        automaticallyImplyLeading: false,
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            Image.asset('dash.png'),
-            Text(
-              'Welcome!',
-              style: Theme.of(context).textTheme.displaySmall,
-            ),
-            const SignOutButton(),
-          ],
+              ),
+            ],
+          ),
         ),
-      ),
-    );
-  }
+      );
+    });
+    return Container(); // Add a return statement
+}
 }
